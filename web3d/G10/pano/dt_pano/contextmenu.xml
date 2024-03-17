@@ -1,0 +1,182 @@
+﻿
+<krpano>
+	<scene name="main" title="dt" onstart="" lat="39.796233694" lng="19.70181763" heading="0.0">
+
+		<view hlookat="357.19322449650025" vlookat="7.885485175223711" fovtype="MFOV" fov="86" fovmin="70" fovmax="86" limitview="auto" />
+
+		<!--<preview url="panos/main/preview.jpg" />-->
+
+		<image>
+			<cube url="panos/main/main_%s.jpg" />
+		</image>
+
+	</scene>
+		
+	<action name="cm_normal_view">
+		cm_look_straight();
+		tween(view.architectural, 0.0, distance(1.0,0.5));
+		tween(view.pannini,       0.0, distance(1.0,0.5));
+		tween(view.fisheye,       0.0, distance(1.0,0.5));
+	</action>
+	
+	<action name="zuoBiao_info">
+		js(krpanoViweChange(view));
+	</action>
+	
+	
+	<action name="loadComb">
+	   js(loadComb(%1,%2));
+	</action>
+	
+	<action name="rootCom">
+		js(rootViweComplete());
+	</action>
+	
+	<action name="setwz">
+		tween(view.fov,           %3, distance(150,0.8));
+		tween(view.vlookat,        %1, distance(100,0.8));
+		tween(view.hlookat,        %2, distance(100,0.8));
+	</action>	
+	
+	
+	<action name="baseImageCom">
+		js(baseImageCom());
+	</action>
+	
+	<action name="errorFunc">
+		js(errorFunc());
+	</action>
+
+	
+	<!--天窗 -->
+	<hotspot name="S35_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_0_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_0_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_0_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_0_5" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	<hotspot name="S35_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_1_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_1_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_1_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S35_1_5" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	
+	
+	<!--内饰格调 -->
+	<hotspot name="A35_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_0_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_0_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_0_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_0_5" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	<hotspot name="A35_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_1_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_1_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_1_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_1_5" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+
+
+	<!--侧移门 -->
+	<hotspot name="_450_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_450_0_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_450_0_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_450_0_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	
+	<hotspot name="_450_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_450_1_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_450_1_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_450_1_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+	
+
+	<!-- M76装饰板-水转印-->
+	<hotspot name="M76_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M76_0_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M76_0_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M76_0_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	
+	<hotspot name="M76_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M76_1_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M76_1_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M76_1_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+	<!--一键启动 -->
+	<hotspot name="S30_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="S30_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+	<!--座椅 -->
+	<hotspot name="A20_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_0_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_0_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_0_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_0_5" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	<hotspot name="A20_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_1_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_1_3" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_1_4" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A20_1_5" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+
+	<!-- 手套箱 -->
+	<hotspot name="A35_bu_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_bu_0_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	<hotspot name="A35_bu_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="A35_bu_1_2" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+ 
+	<!--后视镜 -->
+	<hotspot name="houshijing_0_1" enabled="false" zorder="10" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="houshijing_1_1" enabled="false" zorder="10" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+	
+
+	<!--第三排滑动 -->
+	<hotspot name="N09_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="N09_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+
+
+	<!--自动挡 手动挡 -->
+	<hotspot name="E00_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="E00_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+
+	
+	
+
+	<!--方向盘 -->
+	<hotspot name="F10_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="F10_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+	<!--后举升门 -->
+	<hotspot name="_440_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="_440_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+
+	<!--防炫目内后视镜 -->
+	<hotspot name="M10_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="M10_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+
+
+	
+	
+
+	<!--娱乐系统 -->
+	<hotspot name="U00_0_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	<hotspot name="U00_1_1" enabled="false" zorder="1" distorted="true" ath="0" atv="0" edge="lefttop" alpha="0.0" keep="true"/>
+	
+
+	<events onnewscene="rootCom();"/>
+	
+	<!--<events onloadcomplete="baseImageCom();"/>-->
+	<events onloaderror="errorFunc();"/>
+	
+	<display loadwhilemoving="true" mipmapping="auto" />
+	
+</krpano>
