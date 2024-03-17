@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html style="font-size:100px;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>D90</title>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+<!-- 设置初始变量 -->
+<script type="text/javascript">
+	//var webSiteURL = "https://c2bt4.maxuscloud.com/xxx/Public/3dwap/";
+	var webSiteURL = "";
+	var webSiteCDNURLList = [];//如果不设置cdn则默认为空数组
+	// var webSiteCDNURLList = ['http://D60app.datong.yappam.com/static/3dwap/','https://cdn4.maxuscloud.com/h5/D60apphtml/static/3dwap/','https://c2bcdn.maxuscloud.com/h5/D60apphtml/static/3dwap/'];
+</script>
+
+<!-- 导入配车所需要的js -->
+<script src="car/D90/three.min.js"></script>
+<script src="car/D90/stats.min.js"></script>
+<script src="car/D90/js/ThreeNode.js"></script>
+<script src="car/D90/js/loaders/draco/DRACOLoader.js"></script>
+<script src="car/D90/js/loaders/draco/geometry_helper.js"></script>
+<script src="car/D90/js/loaders/AWDLoader.js"></script>
+<script src="car/D90/js/objects/Lensflare.js"></script>
+<script src="car/D90/js/Tween.js"></script>
+
+<script src="car/D90/js/YappamCar.js"></script>
+<script src="car/D90/js/DracoLoaderManage.js"></script>
+<script src="car/D90/js/MaterialsManage.js"></script>
+<script src="car/D90/js/LightsManage.js"></script>
+<script src="car/D90/js/D90Optional.js"></script>
+<script src="car/D90/js/DeviceTesting.js"></script>
+
+
+		
+		
+		
+		<style>
+			body {
+				background:#fff;
+				color:#000;
+				padding:0;
+				margin:0;
+				overflow:hidden;
+				font-family:monospace;
+				font-size:13px;
+				text-align:center;
+				
+			}
+
+			a { color:skyblue }
+
+			#info {
+				position: absolute;
+				top: 490px; width: 100%;
+				color: #fff;
+				background:rgba(0,0,0,0.65);
+				padding: 5px;
+				text-align: center;
+				z-index:100;
+				display:block;
+			}
+			
+			#stats { position: absolute; top:5px; left: 0; z-index: 100 }
+			#stats #fps { background: transparent !important }
+			#stats #fps #fpsText { color: #aaa !important }
+			#stats #fps #fpsGraph { display: none }
+			
+			.carsPic {
+			  height:800px;
+			}
+			
+			
+			img{     
+			  position:absolute;
+			  left:300px;
+			  top:150px;
+			  visibility:hidden;
+				pointer-events: none;
+            }  
+		</style>
+</head>
+<body>
+<!-- 配车所在的div -->
+<div class="carsPic" >
+
+	<div id="container"></div>
+	
+	<div id="info" style="display:nonea">
+		
+		<div>
+			<button type="button" onclick="buttonClick(33332)">相机位置a</button>
+			<button type="button" onclick="setFeatureList(['M001'])">白色</button>
+			<button type="button" onclick="setFeatureList(['K003'])">红色</button>
+			<button type="button" onclick="setFeatureList(['E002'])">绿色</button>
+			<button type="button" onclick="setFeatureList(['B001'])">蓝色</button>
+			<button type="button" onclick="setFeatureList(['A001'])">灰色</button>
+			<button type="button" onclick="setFeatureList(['F081'])">黑色</button>
+			<button type="button" onclick="setFeatureList(['L001'])">银色</button>
+			<button type="button" onclick="setFeatureList(['C001'])">深金色</button>
+			<button type="button" onclick="setFeatureList(['C002'])">浅金色</button>
+			<button type="button" onclick="setFeatureList(['B002'])">宝石蓝</button>
+			<button type="button" onclick="setFeatureList(['N002'])">竞力橙</button>
+		</div>
+		
+		
+		
+		<div>
+			<button type="button" onclick="setFeatureList(['J07A','J05E']);setFeatureAngle('J07A')">轮毂1J05E</button>
+			<button type="button" onclick="setFeatureList(['J07A','J05F']);setFeatureAngle('J07A')">轮毂2J05F</button>
+			<button type="button" onclick="setFeatureList(['J07A','J05G']);setFeatureAngle('J07A')">轮毂3J05G</button>
+			<button type="button" onclick="setFeatureList(['J07A','J05H']);setFeatureAngle('J07A')">轮毂4J05H</button>
+			<button type="button" onclick="setFeatureList(['J07A','J05K']);setFeatureAngle('J07A')">轮毂5J05K</button>
+			<button type="button" onclick="setFeatureList(['J07B','J05E']);setFeatureAngle('J07B')">轮毂6</button>
+			<button type="button" onclick="setFeatureList(['J07B','J05F']);setFeatureAngle('J07B')">轮毂7</button>
+			<button type="button" onclick="setFeatureList(['J07B','J05G']);setFeatureAngle('J07B')">轮毂8</button>
+			<button type="button" onclick="setFeatureList(['J07B','J05H']);setFeatureAngle('J07B')">轮毂9</button>
+			<button type="button" onclick="setFeatureList(['J07B','J05K']);setFeatureAngle('J07B')">轮毂10</button>
+
+			<button type="button" onclick="setFeatureList(['J07A','J05V']);setFeatureAngle('J05V')">轮毂11</button>
+			<button type="button" onclick="setFeatureList(['J07B','J05V']);setFeatureAngle('J05V')">轮毂12</button>
+
+			<button type="button" onclick="setFeatureList(['J20A']);setFeatureAngle('J20A')">红色轮辐插片</button>
+			<button type="button" onclick="setFeatureList(['J20B']);setFeatureAngle('J20B')">蓝色轮辐插片</button>
+			<button type="button" onclick="setFeatureList(['J20X']);setFeatureAngle('J20X')">无轮辐插片</button>
+			
+		</div>
+		
+		
+		<div>
+		
+			<button type="button" onclick="setFeatureList(['215E']);setFeatureAngle('215E')">驱动形式4wd</button>
+			<button type="button" onclick="setFeatureList(['215D']);setFeatureAngle('215D')">驱动形式2驱</button>
+			<button type="button" onclick="setFeatureList(['215B']);setFeatureAngle('215B')">驱动形式4X4</button>
+			<button type="button" onclick="setFeatureList(['K15M','K17A']);setFeatureAngle('K15M')">散热器隔栅1</button>
+			<button type="button" onclick="setFeatureList(['K15N','K17A']);setFeatureAngle('K15N')">散热器隔栅2</button>
+			<button type="button" onclick="setFeatureList(['K15P','K17A']);setFeatureAngle('K15P')">散热器隔栅3</button>
+			<button type="button" onclick="setFeatureList(['K15Q','K17A']);setFeatureAngle('K15Q')">散热器隔栅4</button>
+			<button type="button" onclick="setFeatureList(['K15Q','K17B']);setFeatureAngle('K15Q')">散热器隔栅5</button>
+			<button type="button" onclick="setFeatureList(['K15S','K17B']);setFeatureAngle('K15S')">散热器隔栅4</button>
+			<button type="button" onclick="setFeatureList(['K152','K17B']);setFeatureAngle('K152')">散热器隔栅4</button>
+			
+			<button type="button" onclick="setFeatureList(['S00E']);setFeatureAngle('S00E')">前大灯</button>
+			<button type="button" onclick="setFeatureList(['S00T']);setFeatureAngle('S00T')">前大灯</button>
+			<button type="button" onclick="setFeatureList(['K04E']);setFeatureAngle('K04F')">前保险杠下饰板1</button>
+			<button type="button" onclick="setFeatureList(['K04F']);setFeatureAngle('K04F')">前保险杠下饰板2</button>
+			<button type="button" onclick="setFeatureList(['K04G']);setFeatureAngle('K04F')">前保险杠下饰板3</button>
+			<button type="button" onclick="setFeatureList(['K04H']);setFeatureAngle('K04H')">前保险杠下饰板4</button>
+			<button type="button" onclick="setFeatureList(['S35S']);setFeatureAngle('S35S')">天窗1</button>
+			<button type="button" onclick="setFeatureList(['S35U']);setFeatureAngle('S35U')">天窗2</button>
+			<button type="button" onclick="setFeatureList(['S35X']);setFeatureAngle('S35X')">天窗3</button>
+			<button type="button" onclick="setFeatureList(['K50M']);setFeatureAngle('K50M')">无侧踏步</button>
+			<button type="button" onclick="setFeatureList(['K50N']);setFeatureAngle('K50N')">有侧踏步</button>
+			<button type="button" onclick="setFeatureList(['K60C']);setFeatureAngle('K60C')">行李架</button>
+			<button type="button" onclick="setFeatureList(['K60D']);setFeatureAngle('K60D')">行李架2</button>
+			<button type="button" onclick="setFeatureList(['K60E']);setFeatureAngle('K60E')">行李架3</button>
+			<button type="button" onclick="setFeatureList(['L14D']);setFeatureAngle('L14D')">BC柱侧窗玻璃</button>
+			<button type="button" onclick="setFeatureList(['L14C']);setFeatureAngle('L14C')">BC柱侧窗玻璃</button>
+			<button type="button" onclick="setFeatureList(['C31A']);setFeatureAngle('C31A')">普通双排气尾管</button>
+			<button type="button" onclick="setFeatureList(['C31C']);setFeatureAngle('C31C')">装饰单侧方形尾管</button>
+			<button type="button" onclick="setFeatureList(['C31D']);setFeatureAngle('C31D')">装饰单侧双尾管</button>
+			<button type="button" onclick="setFeatureList(['C31E']);setFeatureAngle('C31E')">排气管 熏黑</button>
+			<button type="button" onclick="setFeatureList(['S25W']);setFeatureAngle('S25W')">倒车影像</button>
+			<button type="button" onclick="setFeatureList(['S25X']);setFeatureAngle('S25X')">无倒车影像</button>
+			<button type="button" onclick="setFeatureList(['S30P']);setFeatureAngle('S30P')">无钥匙进入及启动系统</button>
+			<button type="button" onclick="setFeatureList(['S42A']);setFeatureAngle('S42A')">照地灯</button>
+			<button type="button" onclick="setFeatureList(['C08H']);setFeatureAngle('C08H')">国五</button>
+			<button type="button" onclick="setFeatureList(['K35C']);setFeatureAngle('K35C')">挡泥板</button>
+			<button type="button" onclick="setFeatureList(['K35X']);setFeatureAngle('K35X')">无挡泥板</button>
+			<button type="button" onclick="setFeatureList(['K47A']);setFeatureAngle('K47A')">普通轮眉</button>
+			<button type="button" onclick="setFeatureList(['K47B']);setFeatureAngle('K47B')">越野轮眉</button>
+			
+			<button type="button" onclick="setFeatureList(['K48A']);setFeatureAngle('K48A')">速度与激情徽标</button>
+			<button type="button" onclick="setFeatureList(['K48B']);setFeatureAngle('K48B')">心之圣地徽标</button>
+			<button type="button" onclick="setFeatureList(['K48X']);setFeatureAngle('K48X')">无徽标</button>
+			
+			<button type="button" onclick="setFeatureList(['K55A']);setFeatureAngle('K55A')">运动版车身贴膜</button>
+			<button type="button" onclick="setFeatureList(['K55B']);setFeatureAngle('K55B')">越野版车身贴膜</button>
+			<button type="button" onclick="setFeatureList(['K55X']);setFeatureAngle('K55X')">无车身贴膜</button>
+			<button type="button" onclick="setFeatureList(['K55D']);setFeatureAngle('K55D')">熏黑版车身贴膜</button>
+			
+			<button type="button" onclick="setFeatureList(['S47A']);setFeatureAngle('S47A')">恶魔红</button>
+			<button type="button" onclick="setFeatureList(['S47B']);setFeatureAngle('S47B')">天使蓝</button>
+			<button type="button" onclick="setFeatureList(['S47C']);setFeatureAngle('S47C')">越野橙</button>
+			<button type="button" onclick="setFeatureList(['S47X']);setFeatureAngle('S47X')">无装饰色</button>
+			
+			<button type="button" onclick="setFeatureList(['S48A']);setFeatureAngle('S48A')">熏黑</button>
+			<button type="button" onclick="setFeatureList(['S48X']);setFeatureAngle('S48X')">无熏黑</button>
+			
+			<button type="button" onclick="setFeatureList(['K37A']);setFeatureAngle('K37A')">普通翼子板饰板</button>
+			<button type="button" onclick="setFeatureList(['K37B']);setFeatureAngle('K37B')">鲨鱼鳍翼子板饰板</button>
+			<button type="button" onclick="setFeatureList(['K37C']);setFeatureAngle('K37C')">熏黑翼子板饰板</button>
+
+			<button type="button" onclick="setFeatureList(['K14A']);setFeatureAngle('K14A')">后门-MAXUS字标</button>
+			<button type="button" onclick="setFeatureList(['K14C']);setFeatureAngle('K14C')">后门-众字标</button>
+
+			<button type="button" onclick="setFeatureList(['K21D']);setFeatureAngle('K21D')">外后视镜色调</button>
+			<button type="button" onclick="setFeatureList(['K21J']);setFeatureAngle('K21J')">外后视镜色调</button>
+
+			<button type="button" onclick="setFeatureList(['K53A']);setFeatureAngle('K53A')">侧窗装饰条</button>
+			<button type="button" onclick="setFeatureList(['K53B']);setFeatureAngle('K53B')">侧窗装饰条</button>
+			<button type="button" onclick="setFeatureList(['K53D']);setFeatureAngle('K53D')">侧窗装饰条</button>
+
+			<button type="button" onclick="setFeatureList(['K42C']);setFeatureAngle('K42C')">车门外把手</button>
+			<button type="button" onclick="setFeatureList(['K42D']);setFeatureAngle('K42D')">车门外把手</button>
+			<button type="button" onclick="setFeatureList(['K42G']);setFeatureAngle('K42G')">车门外把手</button>
+
+			<button type="button" onclick="setFeatureList(['K25A']);setFeatureAngle('K25A')">外饰件套装熏黑</button>
+			<button type="button" onclick="setFeatureList(['K25Z']);setFeatureAngle('K25Z')">外饰件套装</button>
+
+
+			<button type="button" onclick="setFeatureList(['215E','C31E','J07B','K04H','K14A','K15S','K17B','K19A','K21J','K37C','K53D','K55D','K60E','S47A','S48A','K42C','K25A']);">熏黑套装</button>
+			
+			<button type="button" onclick="setFeatureList(['A70H']);setFeatureAngle('A70H')">越野版套餐</button>
+			<button type="button" onclick="setFeatureList(['A70X']);setFeatureAngle('A70X')">无附加套餐</button>
+
+			<button type="button" onclick="setFeatureList(['K10A']);setFeatureAngle('K10A')">沙石挡</button>
+			<button type="button" onclick="setFeatureList(['K10X']);setFeatureAngle('K10X')">无沙石挡</button>
+
+			<button type="button" onclick="setFeatureList(['K11A']);setFeatureAngle('K11A')">行李框</button>
+			<button type="button" onclick="setFeatureList(['K11X']);setFeatureAngle('K11X')">无行李框</button>
+
+			<button type="button" onclick="setFeatureList(['A029']);setFeatureAngle('A029')">2019</button>
+			<button type="button" onclick="setFeatureList(['A02A']);setFeatureAngle('A02A')">2020</button>
+
+			<button type="button" onclick="setFeatureList(['S21B']);setFeatureAngle('S21B')">有感应尾标</button>
+			<button type="button" onclick="setFeatureList(['S21X']);setFeatureAngle('S21X')">无感应尾标</button>
+
+			<button type="button" onclick="setFeatureList(['C00W']);setFeatureAngle('C00W')">2.0T发动机</button>
+			<button type="button" onclick="setFeatureList(['C00Z']);setFeatureAngle('C00Z')">双增压2.0T发动机</button>
+
+			<button type="button" onclick="carTypeSelect(1)">2</button>
+			<button type="button" onclick="carTypeSelect(2)">3</button>
+			<button type="button" onclick="carTypeSelect(3)">4</button>
+			
+		</div>
+		
+		
+		<div>
+			<button type="button" onclick="initLoaderMode()">加载模型</button>
+			<button type="button" onclick="deleteExt()">删除</button>
+			<button type="button" onclick='setCarDoor(true)'>开门</button>
+			<button type="button" onclick='setCarDoor(false)'>关门</button>
+			<button type="button" onclick="addExt()">恢复</button>
+			<button type="button" onclick="initCarStartFun()">sssssss</button>
+		</div>
+
+		<div>
+			<button type="button" onclick="setFeatureList(['K19B','K15Q','K17A','K14C','215D']);">众</button>
+			<button type="button" onclick='setFeatureList(["K19A","K14A","K17B","K15Q","215D"]);'>字</button>
+
+			<button type="button" onclick="setFeatureList(['K19A']);">MAXUS字标套装</button>
+			<button type="button" onclick='setFeatureList(["K19B"]);'>众字标套装</button>
+
+		</div>
+
+		
+		
+	</div>
+	<img id="vBtn_box005" src="666.jpg" width="20" height="20" />
+	<img id="vBtn_box006" src="666.jpg" width="20" height="20" />
+	<img id="vBtn_box008" src="666.jpg" width="20" height="20" />
+	<img id="vBtn_box009" src="666.jpg" width="20" height="20" />
+	<img id="vBtn_box010" src="666.jpg" width="20" height="20" />
+	
+</div>
+
+
+
+</body>
+
+
+
+
+<script type="text/javascript">
+
+
+ document.addEventListener('EnterInterior', function (e) {
+            console.log("切换内饰");
+			deleteExt();
+        }, false);
+
+// 初始化配车
+initCarStartFun();  
+
+// 显示配车
+addExt();
+//console.log("显示车身");
+
+// 配车初始化加载完成回调函数
+function carStartFunc()
+{
+	$(".loader").hide();
+	if(_deviceType == "Windows")
+	{
+		//onWindowResize2();
+		onWindowResize2(750.8354071096502, 153.92788057977842, 777.8465371961856);
+	}else{
+	    onWindowResize3();
+		//onWindowResize3(435.95736518752796,57.442321000621746,410.04856435162475);
+	}
+	
+	setCarDoor(true);
+	setFeatureList(["A02A","C00B","E00N","215D","H18X","N25B","N12X","C08H","C25X","K25Z","K19A","K15Q","K17B","K14A","K04E","F081","J05G","J07A","C31A","K37A","K60D","K53B","K55X","S35S","S00T","S47X","S48X","S04F","K35X","K36B","K47A","K21D","K48X","L15C","L16A","N50R","N56A","A35E","M76Q","M19A","M20X","M95D","M77E","M97X","M96X","K62X","J18A","Q00D","Q05A","J15F","Q08X","Q15H","H10K","J17P","H30H","S41S","S25V","Q07X","S76X","S67B","S70J","S77J","M_00DAB","F00D","S54X","S30X","C09X","T11B","S42X","N00M","N02A","N06B","M57A","K23X","K20M","M10F","440M","S21X","F05B","M14E","M23B","S45R","M41A","F10J","F15X","U07X","M_00CB","S68X","U13X","R01C","R10C","U00G","U106","S57X","T09X","R41A","120T","1309","1351","350E","410E","A03C","A207","A50L","B00L","B203","C06C","D00G","E15X","G00C","G10E","J00Q","J10U","J16F","K08M","K42C","K50M","K51B","K57X","L00H","L10C","L14C","L20Z","M01E","M02G","M03A","M11C","M12B","M16C","M36D","M38A","M42A","M58C","M67C","M78A","N09F","N41D","Q01F","Q04X","Q06X","Q09A","Q10X","Q11D","Q20D","Q22D","Q233","Q24X","Q25B","Q26B","R03X","R05D","S03R","S06A","S08H","S09H","S11A","S14L","S19X","S22J","S23A","S32M","S43A","S46R","S51C","S52B","S53B","S55B","S71A","S75X","T10B","U01A","U05X","U06X","U08A","U11A","Z10C","Z15X","Z16F","M_007D","M_001E","M_008A","M_00AA","M_004D","M_005C"]);
+   // console.log("初始化完毕");
+}
+function carExtLoading(value=0)
+{
+	//alert("开始加载-");
+	console.log('加载百分比',value);
+}
+function carExtLoadingEnd()
+{
+	//alert("全部完毕-");
+	console.log('全部加载完毕');
+}
+	
+</script>
+</html>
