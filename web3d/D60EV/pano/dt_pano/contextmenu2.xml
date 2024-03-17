@@ -1,0 +1,24 @@
+﻿
+<krpano>
+	<scene name="main" title="dt" onstart="" lat="39.796233694" lng="19.70181763" heading="0.0">
+
+		<view hlookat="357.19322449650025" vlookat="7.885485175223711" fovtype="MFOV" fov="86" fovmin="70" fovmax="86" limitview="auto" />
+
+		<!--<preview url="panos/main/preview.jpg" />-->
+
+		<image>
+			<cube url="panos_2/main/main_%s.jpg" />
+		</image>
+
+	</scene>
+
+
+	<action name="rootCom2">
+		js(rootViwe2Complete());
+	</action>
+
+
+	<events onnewscene="rootCom2();"/>
+
+
+</krpano>
