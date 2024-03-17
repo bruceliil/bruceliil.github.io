@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>G50</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+	<meta http-equiv="Expires"   content="0">
+	<meta http-equiv="Cache-Control"   content="no-cache">
+	<meta http-equiv="Pragma"   content="no-cache">
+	
+	<style>
+	<!--
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#ff0000; }-->
+		
+		
+			body {
+				color: #fff;
+				font-family:Monospace;
+				font-size:13px;
+				margin: 0px;
+				text-align:center;
+				overflow: hidden;
+				background-color:#fff;
+			}
+			#info {
+				color: #fff;
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				text-align: center;
+				display:block;
+			}
+			
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+	// var webSiteURL = "https://c2bt4.maxuscloud.com/h5/g50apphtml/static/";
+	var webSiteURL = "";
+</script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script src="pano/krpano.js"></script>
+<script src="pano/YappamCarPano.js"></script>
+<script src="pano/YappamCarPano2.js"></script>
+
+<div id="pano" style="width:100%;height:100%;">
+	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;text-align:center;"><td>ERROR:<br><br>Javascript not activated<br><br></td></tr></table></noscript>
+	<script>
+		embedpano({swf:webSiteURL+"pano/krpano.swf", xml:webSiteURL+"pano/dt_pano/contextmenu.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true,onready: krpanoReady,id:"pano1"});
+	</script>
+</div>
+
+
+<div id="info" style="display:Nonea">
+<button type="button" onclick="zuoBiao_pano()">当前坐标</button>
+<div>
+
+	<button type="button" onclick="setIntFeatureList(['A35A','N50C','N25A']);setIntFeatureAngle('N50X')">A35A_N50C_N25A</button>
+	<button type="button" onclick="setIntFeatureList(['A35A','N50C','N25B']);setIntFeatureAngle('N50X')">A35A_N50C_N25B</button>
+	<button type="button" onclick="setIntFeatureList(['A35A','N50C','N25C']);setIntFeatureAngle('N50X')">A35A_N50C_N25C</button>
+	<button type="button" onclick="setIntFeatureList(['A35A','N50C','N25H']);setIntFeatureAngle('N50X')">A35A_N50C_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35A','N50C','N25J']);setIntFeatureAngle('N50X')">A35A_N50C_N25J</button>
+
+	<button type="button" onclick="setIntFeatureList(['A35E','N50J','N25A']);setIntFeatureAngle('N50X')">A35E_N50J_N25A</button>
+	<button type="button" onclick="setIntFeatureList(['A35E','N50J','N25B']);setIntFeatureAngle('N50X')">A35E_N50J_N25B</button>
+	<button type="button" onclick="setIntFeatureList(['A35E','N50J','N25C']);setIntFeatureAngle('N50X')">A35E_N50J_N25C</button>
+	<button type="button" onclick="setIntFeatureList(['A35E','N50J','N25H']);setIntFeatureAngle('N50X')">A35E_N50J_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35E','N50J','N25J']);setIntFeatureAngle('N50X')">A35E_N50J_N25J</button>
+
+	<button type="button" onclick="setIntFeatureList(['A35F','N50X','N25H']);setIntFeatureAngle('N50X')">A35F_N50X_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35F','N50X','N25J']);setIntFeatureAngle('N50X')">A35F_N50X_N25J</button>
+
+	<button type="button" onclick="setIntFeatureList(['A35K','N50L','N25A']);setIntFeatureAngle('N50X')">A35K_N50L_N25A</button>
+	<button type="button" onclick="setIntFeatureList(['A35K','N50L','N25B']);setIntFeatureAngle('N50X')">A35K_N50L_N25B</button>
+	<button type="button" onclick="setIntFeatureList(['A35K','N50L','N25C']);setIntFeatureAngle('N50X')">A35K_N50L_N25C</button>
+	<button type="button" onclick="setIntFeatureList(['A35K','N50L','N25H']);setIntFeatureAngle('N50X')">A35K_N50L_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35K','N50L','N25J']);setIntFeatureAngle('N50X')">A35K_N50L_N25J</button>
+
+	<button type="button" onclick="setIntFeatureList(['A35T','N50X','N25A']);setIntFeatureAngle('N50X')">A35T_N50X_N25A</button>
+	<button type="button" onclick="setIntFeatureList(['A35T','N50X','N25B']);setIntFeatureAngle('N50X')">A35T_N50X_N25B</button>
+	<button type="button" onclick="setIntFeatureList(['A35T','N50X','N25C']);setIntFeatureAngle('N50X')">A35T_N50X_N25C</button>
+	<button type="button" onclick="setIntFeatureList(['A35T','N50X','N25H']);setIntFeatureAngle('N50X')">A35T_N50X_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35T','N50X','N25J']);setIntFeatureAngle('N50X')">A35T_N50X_N25J</button>
+
+	<button type="button" onclick="setIntFeatureList(['A35U','N50J','N25A']);setIntFeatureAngle('N50X')">A35U_N50J_N25A</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50J','N25B']);setIntFeatureAngle('N50X')">A35U_N50J_N25B</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50J','N25C']);setIntFeatureAngle('N50X')">A35U_N50J_N25C</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50J','N25H']);setIntFeatureAngle('N50X')">A35U_N50J_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50J','N25J']);setIntFeatureAngle('N50X')">A35U_N50J_N25J</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50X','N25A']);setIntFeatureAngle('N50X')">A35U_N50X_N25A</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50X','N25B']);setIntFeatureAngle('N50X')">A35U_N50X_N25B</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50X','N25C']);setIntFeatureAngle('N50X')">A35U_N50X_N25C</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50X','N25H']);setIntFeatureAngle('N50X')">A35U_N50X_N25H</button>
+	<button type="button" onclick="setIntFeatureList(['A35U','N50X','N25J']);setIntFeatureAngle('N50X')">A35U_N50X_N25J</button>
+	
+</div>	
+
+<div>
+	<button type="button" onclick="setIntFeatureList(['N25J']);setIntFeatureAngle('N25J')">N25J</button>
+	<button type="button" onclick="setIntFeatureList(['N25H']);setIntFeatureAngle('N25H')">N25H</button>
+	<button type="button" onclick="setIntFeatureList(['N25A']);setIntFeatureAngle('N25A')">N25A</button>
+	<button type="button" onclick="setIntFeatureList(['N25B']);setIntFeatureAngle('N25B')">N25B</button>
+</div>
+
+<div>
+	<button type="button" onclick="setIntFeatureList(['F10D']);setIntFeatureAngle('F10D')">F10D</button>
+	<button type="button" onclick="setIntFeatureList(['F10Q']);setIntFeatureAngle('F10Q')">F10Q</button>
+	<button type="button" onclick="setIntFeatureList(['F10G']);setIntFeatureAngle('F10G')">F10G</button>
+	<button type="button" onclick="setIntFeatureList(['H30E']);setIntFeatureAngle('H30E')">H30E</button>
+	<button type="button" onclick="setIntFeatureList(['H30H']);setIntFeatureAngle('H30H')">H30H</button>
+	<button type="button" onclick="setIntFeatureList(['M77E']);setIntFeatureAngle('M77E')">M77E</button>
+	<button type="button" onclick="setIntFeatureList(['M77F']);setIntFeatureAngle('M77F')">M77F</button>
+	<button type="button" onclick="setIntFeatureList(['M77G']);setIntFeatureAngle('M77G')">M77G</button>
+	<button type="button" onclick="setIntFeatureList(['Q08C']);setIntFeatureAngle('Q08C')">Q08C</button>
+	<button type="button" onclick="setIntFeatureList(['Q08X']);setIntFeatureAngle('Q08X')">Q08X</button>
+	<button type="button" onclick="setIntFeatureList(['R02F']);setIntFeatureAngle('R02F')">R02F</button>
+	<button type="button" onclick="setIntFeatureList(['R02E']);setIntFeatureAngle('R02E')">R02E</button>
+	<button type="button" onclick="setIntFeatureList(['S30P']);setIntFeatureAngle('S30P')">S30P</button>
+	<button type="button" onclick="setIntFeatureList(['S30X']);setIntFeatureAngle('S30X')">S30X</button>
+	<button type="button" onclick="setIntFeatureList(['S35S']);setIntFeatureAngle('S35S')">S35S</button>
+	<button type="button" onclick="setIntFeatureList(['S35X']);setIntFeatureAngle('S35X')">S35X</button>
+	<button type="button" onclick="setIntFeatureList(['S35U']);setIntFeatureAngle('S35U')">S35U</button>
+	<button type="button" onclick="setIntFeatureList(['T10D']);setIntFeatureAngle('T10D')">T10D</button>
+	<button type="button" onclick="setIntFeatureList(['T10C']);setIntFeatureAngle('T10C')">T10C</button>
+	<button type="button" onclick="setIntFeatureList(['T11A']);setIntFeatureAngle('T11A')">T11A</button>
+	<button type="button" onclick="setIntFeatureList(['T11G']);setIntFeatureAngle('T11G')">T11G</button>
+	<button type="button" onclick="setIntFeatureList(['U00G','U07B']);setIntFeatureAngle('U00G')">U00G</button>
+	<button type="button" onclick="setIntFeatureList(['U00M','U07B']);setIntFeatureAngle('U00M')">U00M</button>
+	<button type="button" onclick="setIntFeatureList(['U00Y','U07B']);setIntFeatureAngle('U00Y')">U00Y</button>
+	<button type="button" onclick="setIntFeatureList(['U00G','U07X']);setIntFeatureAngle('U00G')">U00G</button>
+
+	<button type="button" onclick="setIntFeatureList(['K20M']);setIntFeatureAngle('K20M')">K20M</button>
+	<button type="button" onclick="setIntFeatureList(['K20B']);setIntFeatureAngle('K20B')">K20M</button>
+
+	<button type="button" onclick="setIntFeatureList(['N13C']);setIntFeatureAngle('N13C')">N13C</button>
+	<button type="button" onclick="setIntFeatureList(['N13X']);setIntFeatureAngle('N13X')">N13X</button>
+
+
+	<button type="button" onclick="setIntFeatureList(['M06C']);setIntFeatureAngle('M06C')">M06C-红色喷漆叶片</button>
+	<button type="button" onclick="setIntFeatureList(['M06D']);setIntFeatureAngle('M06D')">M06D-蓝色喷漆叶片</button>
+	<button type="button" onclick="setIntFeatureList(['M06E']);setIntFeatureAngle('M06E')">M06E-黑色叶片</button>
+
+
+	<!-- <button type="button" onclick="setIntFeatureList(['N59A']);setIntFeatureAngle('N59A')">N59A-无小桌板</button>
+	<button type="button" onclick="setIntFeatureList(['N59B']);setIntFeatureAngle('N59B')">N59B-无小桌板</button>
+	<button type="button" onclick="setIntFeatureList(['N59C']);setIntFeatureAngle('N59C')">N59C-带小桌板</button> -->
+
+	<button type="button" onclick="setIntFeatureList(['N59A']);setIntFeatureAngle('N59A')">N59A</button>
+	<button type="button" onclick="setIntFeatureList(['N59B']);setIntFeatureAngle('N59B')">N59B</button>
+	<button type="button" onclick="setIntFeatureList(['N59C']);setIntFeatureAngle('N59C')">N59C</button>
+
+
+	<button type="button" onclick="setIntFeatureList(['S68C']);setIntFeatureAngle('S68C')">S68C-氛围灯</button>
+	<button type="button" onclick="setIntFeatureList(['S68D']);setIntFeatureAngle('S68D')">S68D-氛围灯</button>
+	<button type="button" onclick="setIntFeatureList(['S68E']);setIntFeatureAngle('S68E')">S68E-氛围灯</button>
+	<button type="button" onclick="setIntFeatureList(['S68F']);setIntFeatureAngle('S68F')">S68F-氛围灯</button>
+	<button type="button" onclick="setIntFeatureList(['S68X']);setIntFeatureAngle('S68X')">S68X-无氛围灯</button>
+
+	<button type="button" onclick="oveSitClickGroupFamilyInt(['YPM_00C','YPN59','YPM_00N','YPM77','YPS68','YPR02','YPS30','YPM_00D','YPM_005']);">内饰点</button>
+
+	<button type="button" onclick="oveSitClickGroupFamilyInt(['YPM_00N','YPM77','YPS68']);">内饰点</button>
+
+	<button type="button" onclick="oveSitClickGroupFamilyInt([]);">删除</button>
+	<button type="button" onclick="switchInt(1);">切换角度</button>
+	<button type="button" onclick="switchInt(2);">切换角度</button>
+
+
+</div>
+
+
+
+</div>
+<script>
+
+
+document.addEventListener('HotspotClickInt', function (e) {
+        console.log("内饰热点点击",e.hotspotName);
+        setIntHotspotFeatureAngle(e.hotspotName);
+		
+}, false);
+
+panoStart();
+
+function showHide(value)
+{
+	if(value)
+	{
+		$("#pano").show();
+	}else{
+	
+		$("#pano").hide();
+	}
+}
+
+function panoReady()
+{
+	// alert(12);
+	console.log('内饰初始完毕');
+
+	var intfeatureCodeList = ["E00G","N25J","C21X","C37B","D01X","D35X","F00D","G00A","G10A","H00D","H05D","M001","J00B","J05M","K06C","K15C","K08M","K53B","440C","L14C","L15N","S00B","S11X","S03C","S06A","S10H","S14A","S35X","K60W","K70A","M14F","M16C","M76L","A35A","N50C","N00M","N02A","N13X","N06N","N27H","N59A","F10D","M38M","M77E","M03A","U00M","U07X","R02F","U05X","U08X","R30X","U01X","U04X","U11X","S57X","S68X","Q00D","Q01F","Q05X","Q08X","Q15H","Q20D","R05A","J17P","S41X","S25X","K20B","M10F","H30H","C06X","J15U","H10E","L00G","S45C","M18A","Q04X","S51C","S52A","T07X","T10C","T06A","T11A","T13F","T09X","S30X","U104","D22X","C08H","120T","1305","1351","350E","410J","A029","A03C","A207","A50H","B00L","C01B","C11A","C12A","D00G","D10F","D15A","D19X","D20X","D30X","D32X","E10F","F05A","F12B","J07D","J107","J13C","J16N","K07C","K18B","K21D","K42C","K72C","L10C","L16A","M01D","M02J","M15A","M30B","M37F","M42A","M61A","M62E","M67C","M80A","M83B","M84A","M95X","Q06X","Q11C","Q22C","Q253","Q27A","S04X","S08A","S22A","S32M","S39A","S46X","S53A","S55D","S67A","Z17B","E00S","A121","S00T","F10G","M77G","U00Y","R02E","S41A","S25V","L00D","S45B","S46R","T07B"];
+
+	setIntFeatureList(intfeatureCodeList);
+	// oveSitClickGroupFamilyInt(['YPM_00C','YPN59','YPM_00N','YPM77','YPS68','YPR02','YPS30','YPM_00D']);
+}
+
+function carExtLoading(value=0)
+{
+	//alert("开始加载-");
+	console.log('加载百分比:',value);
+}
+function carExtLoadingEnd()
+{
+	//alert("全部完毕-");
+	console.log('加载完毕');
+	// dadian();
+}
+
+function sssssss()
+{
+	var intfeatureCodeList =  ["N50T","N56A","A35E","M76L","M20X","M95D","M77F","M97X","M96X"];
+	setIntFeatureList(intfeatureCodeList);
+}
+
+
+
+
+
+</script>
+</body>
+</html>

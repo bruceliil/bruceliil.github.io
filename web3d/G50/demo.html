@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html style="font-size:100px;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />-->
+<!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+<!--<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+<!--<meta name="format-detection" content="telephone=no">-->
+
+
+
+<title>G50</title>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript">
+	//var webSiteURL = "http://datong.yappam.com/File/saic/G50/pc/";
+	//var webSiteURL = "http://static.skoda-1.com/PC/";
+	//var webSiteURL = "http://static.skoda-1.com/datong/PC/";
+	//var webSiteURL = "https://c2bt4.maxuscloud.com/xxx/Public/3dwap/";
+	var webSiteURL = "";
+	var webSiteCDNURLList = [];
+	// var webSiteCDNURLList = ['http://G50app.datong.yappam.com/static/3dwap/','https://cdn4.maxuscloud.com/h5/G50apphtml/static/3dwap/','https://c2bcdn.maxuscloud.com/h5/G50apphtml/static/3dwap/'];
+</script>
+
+	  <script src="car/G50/three.min.js"></script>
+	  <script src="car/G50/stats.min.js"></script>
+      <script src="car/G50/js/ThreeNode.js"></script>
+     
+	  <script src="car/G50/js/loaders/draco/DRACOLoader.js"></script>
+	  <script src="car/G50/js/loaders/draco/geometry_helper.js"></script>
+	  <script src="car/G50/js/loaders/AWDLoader.js"></script>
+
+	  <script src="car/G50/js/Tween.js"></script>
+	 
+	   <script src="car/G50/js/YappamCar.js"></script>
+	   <script src="car/G50/js/DracoLoaderManage.js"></script>
+	   <script src="car/G50/js/MaterialsManage.js"></script>
+	   <script src="car/G50/js/LightsManage.js"></script>
+	   <script src="car/G50/js/G50Optional.js"></script>
+	   <script src="car/G50/js/DeviceTesting.js"></script>
+
+
+	
+		<style>
+			body {
+				background:#fff;
+				color:#000;
+				padding:0;
+				margin:0;
+				overflow:hidden;
+				font-family:monospace;
+				font-size:13px;
+				text-align:center;
+				
+			}
+
+			a { color:skyblue }
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				color: #fff;
+				background:rgba(0,0,0,0.65);
+				padding: 5px;
+				text-align: center;
+				z-index:100;
+				display:block;
+			}
+			
+			
+			.carsPic {
+			  height:800px;
+			}
+			
+			
+		</style>
+</head>
+<body>
+<div class="carsPic" >
+
+	<div id="container">
+	
+		
+	</div>
+	
+</div>
+<div id="info" style="display:nonea">
+	<button type="button" onclick="buttonClick(33332)">当前坐标</button>
+	
+	<div>
+		<button type="button" onclick="setFeature('M001')">白色</button>
+		<button type="button" onclick="setFeature('B001')">蓝色</button>
+		<button type="button" onclick="setFeature('F081')">金属黑</button>
+		<button type="button" onclick="setFeature('A121')">极地灰</button>
+		<button type="button" onclick="setFeature('C001')">深金色</button>
+		<button type="button" onclick="setFeature('L001')">星河银</button>
+		<button type="button" onclick="setFeature('P004')">罗兰紫</button>
+		<button type="button" onclick="setFeature('5001')">波光红</button>
+
+		<button type="button" onclick="setFeatureList(['K08M']);setFeatureAngle('K08M');">亚光贴膜</button>
+		<button type="button" onclick="setFeatureList(['K08N']);setFeatureAngle('K08N');">高光贴膜</button>
+		
+	</div>	
+
+	
+
+	<div>
+		<button type="button" onclick="setFeatureList(['J05M']);setFeatureAngle('J05M');">15辐条状轮辐</button>
+		<button type="button" onclick="setFeatureList(['J05N']);setFeatureAngle('J05N');">15辐条非对称式轮辐</button>
+		<button type="button" onclick="setFeatureList(['J05P']);setFeatureAngle('J05P');">10辐条非对称式轮辐</button>
+		<button type="button" onclick="setFeatureList(['J05X']);setFeatureAngle('J05X');">无轮辐(钢圈)</button>
+
+		<button type="button" onclick="setFeatureList(['J07A']);setFeatureAngle('J07A');">高光</button>
+		<button type="button" onclick="setFeatureList(['J07D']);setFeatureAngle('J07D');">灰色喷漆</button>
+	</div>	
+
+	<div>
+		<button type="button" onclick="setFeatureList(['K15B']);setFeatureAngle('K15B');">散热器格栅(皮纹本体+镀铬亮条)</button>
+		<button type="button" onclick="setFeatureList(['K15C']);setFeatureAngle('K15C');">散热器格栅(高亮本体+镀铬亮条)</button>
+		<button type="button" onclick="setFeatureList(['K15D']);setFeatureAngle('K15D');">散热器格栅(皮纹本体+喷漆亮条)</button>
+		<button type="button" onclick="setFeatureList(['K15T']);setFeatureAngle('K15T');">散热器格栅(喷漆本体+喷漆亮条)</button>
+		<button type="button" onclick="setFeatureList(['K15P']);setFeatureAngle('K15P');">满天星散热格栅</button>
+
+		<button type="button" onclick="setFeatureList(['K53B']);setFeatureAngle('K53B');">哑光饰条</button>
+		<button type="button" onclick="setFeatureList(['K53C']);setFeatureAngle('K53C');">不锈钢亮色饰条</button>
+	</div>	
+
+	<div>
+		<button type="button" onclick="setFeatureList(['K60B']);setFeatureAngle('K60B');">带行李架</button>
+		<button type="button" onclick="setFeatureList(['K60W']);setFeatureAngle('K60W');">无行李架</button>
+	</div>
+	<div>
+		<button type="button" onclick="setFeatureList(['L00D']);setFeatureAngle('L00D');">前风窗玻璃(带隔音膜)</button>
+		<button type="button" onclick="setFeatureList(['L00G']);setFeatureAngle('L00G');">普通玻璃</button>
+
+		<button type="button" onclick="setFeatureList(['L14C']);setFeatureAngle('L14C');">BC绿玻</button>
+		<button type="button" onclick="setFeatureList(['L14D']);setFeatureAngle('L14D');">BC灰色隐私玻璃</button>
+
+		<button type="button" onclick="setFeatureList(['L16A']);setFeatureAngle('L16A');">CD绿玻</button>
+		<button type="button" onclick="setFeatureList(['L16B']);setFeatureAngle('L16B');">CD灰色隐私玻璃</button>
+
+		<button type="button" onclick="setFeatureList(['L15M']);setFeatureAngle('L15M');">灰色隐私玻璃(带加热)</button>
+		<button type="button" onclick="setFeatureList(['L15N']);setFeatureAngle('L15N');">绿玻(带加热)</button>
+	</div>
+	<div>
+		<button type="button" onclick="setFeatureList(['S00B']);setFeatureAngle('S00B');">透镜卤素前大灯</button>
+		<button type="button" onclick="setFeatureList(['S00T']);setFeatureAngle('S00T');">LED前大灯</button>
+
+		<button type="button" onclick="setFeatureList(['S25V']);setFeatureAngle('S25V');">可视倒车影像</button>
+		<button type="button" onclick="setFeatureList(['S25W']);setFeatureAngle('S25W');">BVS-SD</button>
+		<button type="button" onclick="setFeatureList(['S25X']);setFeatureAngle('S25X');">无倒车影像</button>
+
+		<button type="button" onclick="setFeatureList(['S35S']);setFeatureAngle('S35S');">前电动天窗</button>
+		<button type="button" onclick="setFeatureList(['S35U']);setFeatureAngle('S35U');">全景天窗</button>
+		<button type="button" onclick="setFeatureList(['S35X']);setFeatureAngle('S35X');">无天窗</button>
+
+		<button type="button" onclick="setFeatureList(['S41A']);setFeatureAngle('S41A');">后部近距离传感器</button>
+		<button type="button" onclick="setFeatureList(['S41S']);setFeatureAngle('S41S');">前后雷达</button>
+		<button type="button" onclick="setFeatureList(['S41X']);setFeatureAngle('S41X');">无近距离传感器</button>
+
+		<button type="button" onclick="setFeatureList(['S45B']);setFeatureAngle('S45B');">非自动前雨刮(无骨)</button>
+		<button type="button" onclick="setFeatureList(['S45C']);setFeatureAngle('S45C');">非自动前雨刮(有骨)</button>
+
+		<button type="button" onclick="setFeatureList(['S46R']);setFeatureAngle('S46R');">带后雨刮</button>
+		<button type="button" onclick="setFeatureList(['S46X']);setFeatureAngle('S46X');">无后雨刮</button>
+
+		<button type="button" onclick="setFeatureList(['K25B']);setFeatureAngle('K25B');">红色套装</button>
+		<button type="button" onclick="setFeatureList(['K25Z']);setFeatureAngle('K25Z');">标准套装</button>
+		<button type="button" onclick="setFeatureList(['K25D']);setFeatureAngle('K25D');">酷黑套装</button>
+
+		<button type="button" onclick="setFeatureList(['K15C', 'K06F', 'K18B', 'K25B']);setFeatureAngle('K25B');">红色套装</button>
+
+
+		<button type="button" onclick="oveSitClickGroupFamily(['YP5','YPM_006','YP440','YPM_00A','YPS00','YPM_00K','YPK60','YPM_00L']);">车身点</button>
+
+		<button type="button" onclick="oveSitClickGroupFamily(['YP5','YPM_00L']);">车身点</button>
+
+		<button type="button" onclick="oveSitClickGroupFamily([]);">停止</button>
+		<button type="button" onclick="switchLight(true,0);">开灯</button>
+		<button type="button" onclick="switchLight(true,1);">开灯</button>
+		<button type="button" onclick="switchLight(false);">关灯</button>
+
+	</div>
+	<div>
+		<button type="button" onclick="initLoaderMode()">加载模型</button>
+		<button type="button" onclick="deleteExt();extDispose()">删除</button>
+		<button type="button" onclick="addExt()">恢复</button>
+
+		<button type="button" onclick="ChangeScene(1)">场景1</button>
+		<button type="button" onclick="ChangeScene(2)">场景2</button>
+		
+	</div>
+
+	<div>
+		<button type="button" onclick="openTheCarDoor('zq',kmwc)">开左前门</button>
+		<button type="button" onclick="openTheCarDoor('zh')">开左后门</button>
+		<button type="button" onclick="openTheCarDoor('yq')">开右前门</button>
+		<button type="button" onclick="openTheCarDoor('yh')">开右后门</button>
+		<button type="button" onclick="openTheCarDoor('h',()=>{console.log('开尾门完成')})">开尾门</button>
+
+		<button type="button" onclick="closeTheCarDoor('zq')">关左前门</button>
+		<button type="button" onclick="closeTheCarDoor('zh')">关左后门</button>
+		<button type="button" onclick="closeTheCarDoor('yq')">关右前门</button>
+		<button type="button" onclick="closeTheCarDoor('yh')">关右后门</button>
+		<button type="button" onclick="closeTheCarDoor('h',()=>{console.log('关尾门完成')})">关尾门</button>
+	</div>
+
+
+
+</div>
+
+
+
+</body>
+
+
+
+<script type="text/javascript">
+
+
+ document.addEventListener('EnterInterior', function (e) {
+            console.log("切换内饰");
+			deleteExt();
+        }, false);
+
+
+document.addEventListener('HotspotClick', function (e) {
+        console.log("热点点击",e.hotspotName);
+		
+}, false);
+
+
+web_app = "app";
+_antialias = true;
+_stats = true;
+initCarStartFun();  
+addExt();
+//console.log("显示车身");
+	
+function carStartFunc()
+{
+	if(_deviceType == "Windows")
+	{
+		onWindowResize2();
+	}else{
+		onWindowResize3(435.95736518752796,57.442321000621746,410.04856435162475);
+	}
+
+	setFeatureList(["E00G","N25J","C21X","C37B","D01X","D35X","F00D","G00A","G10A","H00D","H05D","M001","4353","440A","4351","440C","K06B","K07B","S00B","S11X","S03C","S06A","S10H","S14A","S35X","K60W","K70A","M14F","M16C","M76L","N00M","N02A","N13X","N06N","N27H","N59A","F10D","M38M","M77E","M03A","A35B","N50L","R02F","U05X","U08X","R30X","U01X","U11X","U04X","S57X","S68X","Q00D","Q01F","Q05X","Q08X","Q15H","Q20D","R05A","J17P","S41X","S25X","K20B","M10F","H30H","C06X","J15U","H10E","M_009AB","M18A","Q04X","L13D","L15F","T07X","T10C","T06A","T11A","T13F","T09X","S30X","U104","D22X","C08H","120T","1305","1351","350E","410J","A029","A03C","A207","A35A","A50H","B00L","C01B","C11A","C12A","D00G","D10F","D15A","D19X","D20X","D30X","D32X","E10F","F05A","F12B","J00B","J05M","J07D","J107","J13C","J16N","K06C","K07C","K08M","K15C","K18B","K21D","K42C","K53B","K72C","L00G","L10C","L14C","L15N","L16A","M01D","M02J","M15A","M30B","M37F","M42A","M61A","M62E","M67C","M80A","M83B","M84A","M95X","N50C","Q06X","Q11C","Q22C","Q253","Q27A","S04X","S08A","S22A","S32M","S39A","S45C","S46X","S51C","S52A","S53A","S55D","S67A","U00M","U07X","Z17B"]);
+}
+function carExtLoading(value=0)
+{
+	//alert("开始加载-");
+	console.log('加载百分比',value);
+}
+function carExtLoadingEnd()
+{
+	//alert("全部完毕-");
+}
+
+function kmwc()
+{
+	
+	// closeTheCarDoor('zq',() =>{
+	// 	console.log('CCCCCCCC');
+	// })
+}
+	
+</script>
+</html>
