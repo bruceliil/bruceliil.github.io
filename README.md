@@ -45,5 +45,20 @@ webGL、web3D、three.js、krpano
 
 # **Unity 2D游戏DEMO**
 
-### 宝石迷阵Demo
-消消乐类小游戏
+### 游戏1：宝石迷阵Demo
+消消乐类小游戏，使三个或三个以上相同的宝石相连，以此消除他们。
+### 截图
+![game](https://bruceliil.github.io/unity/img/GemMaze.png)
+### 使用技术
+unity
+### 在线预览
+[小游戏Demo](https://bruceliil.github.io/unity/2Dgame/GemMaze/index.html)
+
+### 游戏2：太空射击Demo
+射击类游戏
+### 截图
+![game](https://bruceliil.github.io/unity/img/SpaceShoot.png)
+### 使用技术
+unity
+### 在线预览
+[小游戏Demo](https://bruceliil.github.io/unity/2Dgame/SpaceShoot/index.html)
