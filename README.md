@@ -42,3 +42,8 @@ webGL、web3D、three.js、krpano
 ### 在线预览(PC端)
 [汽车外观](https://bruceliil.github.io/web3d/G50/demo.html)
 [汽车内饰](https://bruceliil.github.io/web3d/G50/pano.html)
+
+# **Unity 2D游戏DEMO**
+
+### 宝石迷阵Demo
+消消乐类小游戏
