@@ -1,0 +1,11 @@
+{
+"companyName": "DefaultCompany",
+"productName": "SpaceShooter_unity5.0_58kaifa.com",
+"dataUrl": "SpaceShoot.data.unityweb",
+"asmCodeUrl": "SpaceShoot.asm.code.unityweb",
+"asmMemoryUrl": "SpaceShoot.asm.memory.unityweb",
+"asmFrameworkUrl": "SpaceShoot.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
