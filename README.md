@@ -55,7 +55,7 @@ unity
 [小游戏Demo](https://bruceliil.github.io/unity/2Dgame/GemMaze/index.html)
 
 ### 游戏2：太空射击Demo
-射击类游戏
+射击类游戏，半成品。
 ### 截图
 ![game](https://bruceliil.github.io/unity/img/SpaceShoot.png)
 ### 使用技术
