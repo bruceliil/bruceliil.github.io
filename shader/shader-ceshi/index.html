@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		name="viewport">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<link rel="shortcut icon" href="images/favicon1.ico" /><!--ico图标，后期需要修改-->
+	<title>demo</title><!--SEO，后期需要修改-->
+
+	<!--公用文件-->
+	<link rel="stylesheet" type="text/css" href="style/iconfont.css" />
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<!-- <script type="text/javascript" src="js/gsap.min.js"></script> -->
+
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/EasePack.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style/swiper-bundle.min.css" />
+	<script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="style/css.css" />
+	<script type="text/javascript" src="js/index.js"></script>
+
+	<script type="text/javascript" src="js/lenis.js"></script>
+	<script>
+		const lenis = new Lenis({
+			duration: 1.2,
+			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+			direction: 'vertical', // vertical, horizontal
+			gestureDirection: 'vertical', // vertical, horizontal, both
+			smooth: true,
+			mouseMultiplier: 1,
+			smoothTouch: false,
+			touchMultiplier: 2,
+			infinite: false,
+		})
+
+		function raf(time) {
+			lenis.raf(time)
+			requestAnimationFrame(raf)
+		}
+
+		requestAnimationFrame(raf)
+	</script>
+
+</head>
+
+<body class="load_body">
+	<div class="load">
+		<div class="icon">
+			<!-- <div class="logo"><img src="images/logo.svg"></div> -->
+		</div>
+	</div>
+	<div class="load_img" style="display: none;">
+		<img src="" data-src="images/logo.svg">
+
+	</div>
+
+	<div class="header">
+		<!-- <div class="logo"><img src="images/logo.svg"></div>
+	<div class="nav"><img src="images/nav.png"></div> -->
+	</div>
+
+
+	<div class="main">
+
+		<div class="home_s1_bg">
+
+			<div class="bg canvas_3d"></div>
+
+		</div>
+
+
+
+
+	</div>
+
+
+	<script type="importmap">
+    {
+        "imports": {
+            "three": "./js/three/build/three.module.js"
+        }
+    }
+	</script>
+
+	<!-- <script type="module" src="js/index_3d.js"></script> -->
+
+	<script type="module" src="js/demo/index_3d_demo.js"></script>
+
+
+</body>
+
+</html>
